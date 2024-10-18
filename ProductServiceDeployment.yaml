@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productserviceoct1
+  labels:
+    app: productserviceoct1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: productserviceoct1
+  template:
+    metadata:
+      name: productserviceoct1
+      labels:
+        app: productserviceoct1
+    spec:
+      containers:
+        - name: productserviceoct1
+          image: aroraankit7/productservice:v3.0
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      
